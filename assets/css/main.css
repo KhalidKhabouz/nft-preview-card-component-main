@@ -27,8 +27,6 @@
 }
 
 body {
-  /* font-size: var(--fzise); */
-  /* background-color: yellow; */
   font-family: 'Outfit', sans-serif;
   color: var(--soft_blue);
   background-color: var(--very_dark_blue_100);
@@ -41,12 +39,8 @@ a {
 .container-main {
   display: flex;
   justify-content: center;
-  /* border: yellowgreen solid 1px; */
-  /* background-color: yellow; */
-  width: 80%;
   margin: 0 auto;
-  padding: 5em;
-
+  padding: 9.375em 0;
 }
 
 .card {
@@ -54,17 +48,51 @@ a {
   width: 350px;
   background-color: var(--very_dark_blue_200);
   border-radius: 15px;
-  /* box-shadow: 0px 30px 0 15px #0c1729; */
   box-shadow: 0px 30px 0 15px #0c1729, 0px 24px 0 45px #0c192c;
-  /* outline: #0c192c; */
-  /* outline: violet; */
 }
 
-.card__header img {
+.card__header {
+ position: relative;
+}
+
+
+.card__img {
   width: 100%;
   display: block;
   border-radius: 10px;
 }
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: aqua;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+.icon-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 48px;
+  margin-top: -24px;
+  margin-left: -25px;
+  opacity: 0;
+}
+
+.card__header:hover .overlay {
+  opacity: 0.5;
+  cursor: pointer;
+ }
+
+ .card__header:hover .icon-view {
+  opacity: 1;
+ }
 
 .card__body {
   padding-top: 28px;
@@ -96,7 +124,6 @@ a {
 .card__status {
   display: flex;
   justify-content: space-between;
-  
 }
 
 .status {
@@ -116,7 +143,6 @@ a {
  column-gap: 1em ;
  padding-top: 1em;
  padding-bottom: 8px;
- 
 }
 
 .card__footer img {
@@ -137,3 +163,13 @@ a {
  .creator-name a:hover {
   color: var(--cyan);
  }
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
